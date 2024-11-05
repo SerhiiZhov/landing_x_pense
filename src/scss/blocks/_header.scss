@@ -1,0 +1,261 @@
+
+@include bp($point_4, min) {
+  :focus,:active,a:active{outline: none;}
+  a:focus-visible,  .popup__close:focus-visible, button:focus-visible{
+      filter: drop-shadow(0 0 1rem black);
+      transition: all 0.3s ease-in-out;
+  } 
+  input:focus-visible{
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 1rem #706FE5;
+  }
+}
+
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 50%;
+  max-width: $container_main;
+  width: 100%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-in-out;
+
+  &:has(.open) {
+    &::after {
+      pointer-events: none;
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+  }
+
+  
+
+    @include bp($point_2, min) {
+      &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        z-index: -1;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100dvw;
+        height: 12rem;
+        background: white;}
+    }
+
+  
+
+  @include bp($point_2, min) {
+    padding: 4rem $container_padding;
+  }
+
+  @include bp($point_3) {
+    padding: 2rem $container_padding;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo_w {
+    transition: all 0.3s ease-in-out;
+    align-self: center;
+    position: relative;
+    z-index: 100;
+    width: 11.2rem;
+    height: 4rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__menu_wrapper {
+    display: flex;
+    max-width: 74.5rem;
+    width: 100%;
+    
+
+    @include bp($point_2, min) {
+      position: relative;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @include bp($point_3) {
+      transition: all 0.5s ease-in-out;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: -200rem;
+      height: 100dvh;
+      background: rgb(249, 220, 207);
+      flex-direction: column;
+      overflow: auto;
+      padding-top: 12rem;
+      justify-content: space-between;
+
+      &::after {
+        transition: all 0.3s ease-in-out;
+        content: "";
+        position: fixed;
+        top: 0rem;
+        left: 0;
+        width: 100%;
+        height: 8rem;
+        background: white;
+      }
+
+      & .header__menu {
+        display: block;
+
+        & .menu__item {
+          margin-bottom: 3rem;
+          text-align: center;
+        }
+      }
+
+      & .menu_right {
+        margin: 0 auto 2rem;
+      }
+    }
+
+    @include bp($point_3) {
+      &.open {
+        @include bpd($point_6, $point_3) {
+          width: 30rem;
+          right: 0;
+        }
+
+        @include bp($point_7) {
+          width: 100%;
+          right: 0;
+        }
+
+          & .header__menu {
+          display: block;
+
+          & .menu__item {
+            margin-bottom: 3rem;
+            text-align: center;
+          }
+        }
+
+        
+      }
+    }
+  }
+}
+
+.shrink {
+  padding: 0.5rem $container_padding !important;
+  &::before {
+    @include bp($point_3) {
+      height: 4rem;
+    }
+  }
+
+  & .header__menu_wrapper::after {
+    height: 4rem;
+  }
+
+  & .header__logo_w {
+    width: 7rem;
+    height: 2.5rem;
+  }
+
+  & .menu__button {
+    scale: 0.7;
+  }
+}
+.menu {
+  display: flex;
+  gap: 4rem;
+
+  &__link {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+  }
+}
+.menu_right {
+  margin-left: auto;
+}
+.menu__button {
+  transition: all 0.3s ease-in-out;
+
+  @include bp($point_2, min) {
+    display: none;
+  }
+
+  @include bp($point_3) {
+    align-self: center;
+    display: block;
+  }
+
+  cursor: pointer;
+  height: 2.7rem;
+  width: 2.7rem;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+
+  & span,
+  & span::before,
+  & span::after {
+    background: $main_color;
+    display: block;
+    height: 0.4rem;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+  }
+
+  & span::before,
+  & span::after {
+    content: "";
+  }
+
+  & span {
+    right: 0px;
+    top: 1.3rem;
+    width: 2.7rem;
+  }
+  & span:before {
+    right: 0;
+    top: -1rem;
+    width: 1.6rem;
+  }
+  & span:after {
+    right: 0;
+    top: 1rem;
+    width: 2rem;
+  }
+
+  &.open span {
+    transform: rotate(-45deg);
+    top: 1.3rem;
+    width: 2.7rem;
+  }
+  &.open span:before {
+    top: 0;
+    transform: rotate(90deg);
+    width: 2.7rem;
+  }
+  &.open span:after {
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+  }
+}

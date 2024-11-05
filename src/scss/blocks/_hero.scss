@@ -1,0 +1,141 @@
+.hero {
+  
+  gap: 3rem;
+
+  
+  @include bp($point_6, min) {
+    display: flex;
+  }
+
+  
+  
+  @include bp($point_7) {
+  display: block;
+  }
+  
+  
+  
+
+  &__contain {
+    max-width: 54rem;
+    
+    @include bp($point_7, min) {
+      padding-top: 4rem;
+    }
+    
+  }
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+
+  &__descr {
+    font-weight: 400;
+    color: #bdbdbd;
+    
+
+    
+    @include bp($point_2, min) {
+      font-size: 2.4rem;
+      text-align: left;
+      margin-bottom: 4rem;
+    }
+
+    
+    @include bpd($point_6, $point_3) {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    @include bp($point_7) {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+  }
+
+  &__btn_w {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+    
+    @include bpd($point_6,$point_3 ) {
+    justify-content: center; 
+    }
+
+    
+    @include bp($point_7) {
+      flex-direction: column; 
+      justify-content: center; 
+    }
+    
+          
+  }
+
+  &__btn_descr {
+    font-weight: 400;
+    color: #bdbdbd;
+
+    @include bp($point_2, min) {
+      font-size: 2.4rem;
+      text-align: left;
+      line-height: 3.8rem;
+    }
+
+    
+    @include bpd($point_6, $point_3) {
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+    }
+    
+    @include bp($point_7) {
+      & span{
+        display: none;
+      }
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      text-align: center;
+    }
+    
+  }
+
+  &__icon_w {
+    width: 100%;
+    order: 1;
+    
+    @include bp($point_2, min) {
+      height: 47.8rem;
+      max-width: 53.8rem;
+    }
+    
+    @include bp($point_3) {
+    display: none;
+    }
+    
+
+    &--mob{
+
+      @include bp($point_2, min) {
+      display: none;
+      }
+
+      
+      @include bp($point_3) {
+      display: block;
+      max-width: 30rem;
+      margin: 0 auto 2rem;
+      }
+      
+      
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    @include bp($point_2, min) {
+      height: 100%;
+    }
+    
+  }
+}

@@ -1,0 +1,131 @@
+.section--admin_panel {
+  background: $main_color;
+  display: flex;
+  padding-bottom: 0 !important;
+  flex-direction: column;
+  position: relative;
+  
+
+  @include bp($point_3) {
+    padding-top: 3rem !important;
+  } 
+
+  &::before {
+    content: "";
+    width: 110.4rem;
+    height: 85.7rem;
+    left: -30rem;
+    bottom: -15rem;
+    background: url("../img/decor_left.webp") center/contain no-repeat;
+    position: absolute;
+  }
+  &::after {
+    content: "";
+    width: 110.4rem;
+    height: 85.7rem;
+    right: -40rem;
+    top: -20rem;
+    background: url("../img/decor_right.webp") center/contain no-repeat;
+    position: absolute;
+  }
+}
+
+.sec2__img_wrapper {
+  width: 100%;
+  align-self: flex-end;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.sec2__brand_container {
+  max-width: 125rem;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.sec2__brand_container:before,
+.sec2__brand_container:after {
+  content: "";
+  height: 100%;
+  top: 0;
+  width: 20%;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.sec2__brand_container:before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.sec2__brand_container:after {
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include bp($point_2, min) {
+    margin: 8.2rem 0rem 6.6rem 0;
+  }
+
+  @include bpd($point_6, $point_3) {
+    margin: 2rem 0rem 2rem 0;
+  }
+}
+
+.item {
+  position: relative;
+
+  @include bp($point_2, min) {
+    margin-right: 10.5rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    scale: 0.5;
+  }
+  
+  @include bp($point_7) {
+  width: 5rem !important;
+  margin-right: 2rem;
+  }
+  
+
+  & img {
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.marquee {
+  animation: 20s scroll linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100%));
+  }
+}

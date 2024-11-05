@@ -1,0 +1,884 @@
+.footer {
+  @include bp($point_2, min) {
+    padding: 8rem 3rem 9rem 3rem;
+  }
+
+  @include bp($point_7) {
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+.footer__top {
+  padding-bottom: 4rem;
+  border-bottom: 0.1rem solid #bdbdbd33;
+
+  @include bp($point_2, min) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 6rem;
+  }
+
+  @include bp($point_3) {
+    padding-top: 2rem;
+  }
+}
+
+.footer__logo {
+  @include bp($point_2, min) {
+    width: 12.5rem;
+    height: 4.5rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    margin-bottom: 2rem;
+    width: 8.5rem;
+    height: 3rem;
+  }
+
+  @include bp($point_7) {
+    display: none;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.footer__title {
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @include bp($point_2, min) {
+    font-size: 2.4rem;
+    line-height: 3.9rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    font-size: 1.8rem;
+    line-height: 3.9rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+
+  @include bp($point_7) {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+  }
+}
+
+.footer__links {
+  @include bp($point_6, min) {
+    display: flex;
+  }
+
+  @include bpd($point_6, $point_3) {
+    justify-content: space-around;
+  }
+}
+
+.accordion {
+  @include bp($point_2, min) {
+    margin-right: 12.3rem;
+  }
+
+  @include bp($point_7) {
+    max-width: 35rem;
+    width: 100%;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+  }
+}
+
+.accordion__title {
+  @include bp($point_7) {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      width: 100%;
+      height: 0.05rem;
+      background-color: black;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      translate: 0 50%;
+      right: 2rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-right: 0.2rem solid black;
+      border-bottom: 0.2rem solid black;
+      rotate: 315deg;
+      transition: all 0.3s ease-in-out;
+    }
+    &.active::after {
+      rotate: 405deg;
+    }
+  }
+}
+
+.accordion__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 40rem;
+
+  @include bp($point_2, min) {
+    width: 100%;
+  }
+
+  @include bp($point_7) {
+    margin: 0 auto;
+  }
+}
+
+.accordion__content {
+  @include bp($point_7) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+  }
+}
+
+.accordion__title.active + .accordion__content {
+  @include bp($point_7) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.footer__liks_item {
+  display: block;
+  font-weight: 500;
+  line-height: 2.9rem;
+
+  color: black;
+
+  @include bp($point_2, min) {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+
+  @include bp($point_7) {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer__form {
+  @include bp($point_2, min) {
+    max-width: 35rem;
+    width: 100%;
+  }
+
+  @include bpd($point_6, $point_3) {
+    max-width: 17rem;
+  }
+
+  @include bp($point_7) {
+    max-width: 35rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: black, $alpha: 0.8) url("../img/loading.gif")
+      center / 5rem no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.footer__form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer__fieldset {
+  margin-bottom: 1rem;
+
+  @include bp($point_2, min) {
+    width: 100%;
+    position: relative;
+  }
+
+  & button {
+    @include bp($point_2, min) {
+      position: absolute;
+      top: 50%;
+      right: 2%;
+      translate: 0 -50%;
+    }
+
+    @include bp($point_7) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.footer__email {
+  width: 100%;
+  border: 0.1rem solid black;
+  border-radius: 0.8rem;
+  font-weight: 400;
+
+  @include bp($point_2, min) {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.9rem;
+    height: 6.2rem;
+    padding: 1.7rem 15rem 1.7rem 2.3rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 3.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @include bp($point_7) {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    padding: 1.7rem 1rem 1.7rem 1rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &::placeholder {
+    color: black;
+    font-weight: 400;
+
+    @include bp($point_2, min) {
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 2.9rem;
+    }
+
+    @include bp($point_7) {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
+  }
+}
+
+.footer__descr {
+  font-weight: 400;
+  color: #bdbdbd;
+
+  @include bp($point_2, min) {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  @include bp($point_7) {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.footer__fieldset_policy {
+  display: flex;
+  align-items: center;
+}
+.footer__checkbox {
+  display: none;
+
+  &:checked + .footer__lab_checkbox::after {
+    scale: 1;
+  }
+  &._error {
+    + .footer__lab_checkbox::before {
+      box-shadow: 0 0 1.5rem red;
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+.footer__lab_checkbox {
+  color: black;
+  font-weight: 400;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+
+  @include bp($point_2, min) {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+
+  @include bp($point_3) {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  &::before {
+    content: "";
+    align-self: center;
+
+    border: 0.1rem solid black;
+
+    margin-right: 0.5rem;
+
+    @include bp($point_2, min) {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 0.8rem;
+    }
+
+    @include bp($point_3) {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 0.2rem;
+    }
+  }
+  &::after {
+    content: "";
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 30% -50%;
+    align-self: center;
+    background-color: $main_color;
+    width: 1.4rem;
+    height: 1.4rem;
+    scale: 0;
+    margin-right: 0.5rem;
+
+    @include bp($point_2, min) {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.8rem;
+    }
+
+    @include bp($point_3) {
+      width: 0.87rem;
+      height: 0.87rem;
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+.footer__bot {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  @include bp($point_2, min) {
+    justify-content: space-between;
+    padding: 2rem 0 0;
+  }
+
+  @include bpd($point_6, $point_3) {
+    justify-content: space-around;
+    padding: 2rem 0;
+  }
+
+  @include bp($point_7) {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 5rem;
+    padding: 2rem 0 0;
+  }
+}
+
+.footer__pages {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: space-between;
+  align-items: center;
+
+  @include bp($point_5) {
+    display: none;
+  }
+
+  & li,
+  & a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.3rem;
+    color: black;
+  }
+}
+
+.footer__copyright {
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.3rem;
+
+  @include bp($point_7) {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  @include bp($point_7) {
+    margin-bottom: 2rem;
+  }
+}
+
+.footer__icon_w {
+  height: 2rem;
+  width: 2rem;
+  transition: all 0.3s ease-in-out;
+
+  
+
+  @media (hover:hover){
+    &:hover {
+      scale: 1.2;
+    }
+  }
+
+  @media (hover: none){
+    &:active {
+      scale: 1.2;
+    }
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.popup {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(1, 1, 1, 0.4);
+  justify-content: center;
+  align-items: center;
+  display: none;
+  padding: 0 2rem;
+}
+
+.popup.active {
+  display: flex;
+}
+
+.popup__in {
+  position: relative;
+  min-height: 40rem;
+  width: 100%;
+  background: rgba(22, 19, 19, 0.197);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
+  border: 0.5rem solid $main_color;
+
+  @include bp($point_2, min) {
+    max-width: 80rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    max-width: 30rem;
+  }
+
+  @include bp($point_7) {
+    max-width: 30rem;
+  }
+}
+
+.popup__close {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @include bp($point_2, min) {
+    height: 8rem;
+    width: 8rem;
+    top: -3rem;
+    right: -3rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    height: 4rem;
+    width: 4rem;
+    top: -1.5rem;
+    right: -1.5rem;
+  }
+
+  @include bp($point_7) {
+    height: 2rem;
+    width: 2rem;
+    top: -1rem;
+    right: -1rem;
+  }
+
+  & span {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: $main_color;
+    border-radius: 50%;
+    z-index: 0;
+
+    @include bp($point_2, min) {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    @include bpd($point_6, $point_3) {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    @include bp($point_7) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &::after{
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      border: 0.2rem solid white;
+      border-radius: 50%;
+      z-index: 1;
+  
+      @include bp($point_2, min) {
+        width: 7.5rem;
+        height: 7.5rem;
+      }
+  
+      @include bpd($point_6, $point_3) {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+  
+      @include bp($point_7) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}
+
+.popup__close::after,
+.popup__close::before {
+  position: absolute;
+  content: "";
+  z-index: 2;
+
+  background-color: white;
+
+  @include bp($point_2, min) {
+    width: 4rem;
+    height: 0.7rem;
+  }
+
+  @include bpd($point_6, $point_3) {
+    width: 2.5rem;
+    height: 0.4rem;
+  }
+
+  @include bp($point_7) {
+    width: 1.2rem;
+    height: 0.2rem;
+  }
+}
+
+.popup__close::after {
+  transform: rotate(60deg);
+}
+
+.popup__close::before {
+  transform: rotate(-60deg);
+}
+
+.wrapper{
+  overflow: visible;
+  max-width: 75rem;
+  border-radius: 1rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  margin: 0 1rem;
+
+  
+  @include bp($point_2, min) {
+    padding: 4rem 3.5rem 5.5rem;
+  }
+  
+
+  @include bp($point_3) {
+    padding: 2rem 1rem 2rem;
+  }
+  
+}
+
+.wrapper h2{
+  
+  text-align: center;
+  margin-bottom: 2rem;
+
+  
+  @include bp($point_6, min) {
+    font-size: 3.6rem;
+  }
+
+  
+  @include bp($point_7) {
+    font-size: 2.4rem;
+  }
+  
+  
+}
+
+.wrapper .input-box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form{
+  &::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: black, $alpha: 0.8) url("../img/loading.gif")
+      center / 5rem no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.input-box .input-field{
+  position: relative;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+
+@include bp($point_2, min) {
+  width: 50%;
+}
+
+  @include bp($point_3) {
+    width: 100%;
+  }
+  
+}
+
+.input-box .input-field input{
+  height: 100%;
+  background: transparent;
+  border: 0.2rem solid white;
+  display: inline-block;
+  color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+
+  
+  
+}
+
+.input-box .input-field input::placeholder{
+  color: white;
+}
+
+.wrapper label{
+  display: inline-flex;
+  font-size: 1.4rem;
+  margin: 1rem 0 2.3rem;
+}
+
+.wrapper .er,
+.footer__fieldset + p{
+  color:  red;
+  visibility: hidden;
+  
+  
+  @include bp($point_2, min) {
+    font-size: 1.4rem;
+    margin-bottom: 1.3rem;
+  }
+
+  
+  @include bpd($point_6, $point_3) {
+    font-size: 1.2rem;
+    margin-bottom: 1.3rem;
+  }
+  
+  
+  @include bp($point_7) {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+}
+
+.succes > .er{
+  color: rgb(0, 255, 0);
+  visibility: visible;
+}
+
+
+.input-field:has(._error) + p,
+.footer__fieldset:has(._error) + p {
+  visibility: visible;
+}
+
+
+
+.wrapper a{
+text-decoration: none;
+color: $main_color;
+}
+
+.wrapper a:hover{
+text-decoration: underline;
+}
+
+
+.wrapper label input{
+  accent-color: white;
+}
+
+.wrapper .btns{
+  width: 100%;
+  height: 4.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+  font-size: 1.6rem;
+  color: $main_color;
+  font-weight: 600;
+}
+
+
+
+@include bp($point_7){
+  .input-box .input-field{
+      width: 100%;
+  }
+}
+
+input[checked]{
+  margin-right: 1rem;
+}
+
+.popup__input{
+ align-items: center;
+}
+
+
+
+.popup__success{
+  display: none;
+  flex-direction: column;
+  padding: 5rem  0;
+  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 35rem;
+  position: relative;
+  z-index: 900;
+}
+
+.popup:has(._hiden) .popup__success{
+  display: flex;
+}
+
+.success__desr{
+  font-size: 1.6rem;
+  text-align: center;
+}
+._hiden{
+  display: none;
+}
+.popup__img_w{
+  margin-bottom: 2rem;
+
+  @include bp($point_2, min) {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  
+  @include bp($point_3) {
+    width: 5rem;
+    height: 5rem;
+  }  
+
+  & img{
+    width: 100%;height: 100%;
+  }
+}
+
+.success__desr{
+  color:  white;
+  margin-bottom: 2rem;
+}
+
+.success__desr_item li{
+font-size: 1.6rem;
+text-align: center;
+margin-bottom: 2rem;
+ &:last-child{
+  margin-bottom: 0;
+ }
+}

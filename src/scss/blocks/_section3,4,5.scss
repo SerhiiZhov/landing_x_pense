@@ -1,0 +1,150 @@
+.sec3,
+.sec4,
+.sec5 {
+  display: flex;
+  justify-content: space-between;
+
+  &__contain {
+    
+    width: 100%;
+
+    
+    @include bp($point_2, min) {
+      max-width: 53rem;
+    }
+    
+  }
+
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.sec4__contain{
+    order: 1;
+}
+
+.sec3,
+.sec4,
+.sec5 {
+
+  &__descr {
+    font-weight: 400;
+    color: #bdbdbd;
+   
+
+    
+    @include bp($point_2, min) {
+      font-size: 2.2rem;
+      line-height: 3.5rem;
+      text-align: left;
+      max-width: 47.4rem;
+    }
+
+    
+    @include bpd($point_6, $point_3) {
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+      text-align: center;
+    }
+    
+    @include bp($point_7) {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
+    
+    
+
+    &:first-child {
+      text-transform: uppercase;
+    }
+  }
+
+  &__btn_w {
+    padding-top: 2.5rem;
+  }
+
+  &__btn_arrow {
+    display: inline-flex;
+    font-weight: 400;
+    text-align: left;
+    background-color: transparent;
+    color: $main_color;
+
+    
+    @include bp($point_2, min) {
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+    }
+
+    
+    @include bp($point_3) {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
+    
+
+    &::after {
+      content: "";
+      align-self: center;
+      background: url("../img/icons/icon.svg#orange_arrow") center/contain
+        no-repeat;
+
+        
+        @include bp($point_2, min) {
+          margin-left: 1.5rem;
+          width: 1.6rem;
+          height: 1.4rem;
+        }
+
+        
+        @include bp($point_3) {
+          margin-left: 1rem;
+          width: 1.2rem;
+          height: 1rem;
+        }
+        
+    }
+  }
+
+  &__icon_w {
+    width: 100%;
+    align-self: center;
+
+    
+    @include bp($point_2, min) {
+      max-width: 54rem;
+      height: 43rem;
+    }
+    
+
+    
+    @include bp($point_3) {
+    display: none;
+    }
+    
+
+    &--mob{
+      @include bp($point_2, min) {
+        display: none;
+      }
+
+      @include bp($point_3) {
+      display: block;
+      max-width: 30rem;
+      margin: 0 auto;
+      }
+      
+      
+    }
+  }
+
+  &__icon {
+
+    width: 100%;
+    height: 100%;
+  }
+}
+

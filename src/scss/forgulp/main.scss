@@ -1,0 +1,18 @@
+@import '../null';
+@import '../fonts';
+@import '../variables';
+@import '../helpers/extends';
+@import '../helpers/mixin';
+@import '../base';
+
+// blocks
+
+@import '../blocks/header';
+@import '../blocks/hero';
+@import '../blocks/section_admin_panel';
+@import '../blocks/section3,4,5';
+@import '../blocks/product_work_with';
+@import '../blocks/flexible_plan';
+@import '../blocks/review';
+@import '../blocks/downloads';
+@import '../blocks/footer';

@@ -1,0 +1,220 @@
+.sec6 {
+  &__text_wrapper {
+    
+    
+
+    
+    @include bp($point_2, min) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8rem;
+    }
+
+    
+    @include bpd($point_6,$point_3) {
+    display: block;
+    margin-bottom: 4rem;
+    }
+    
+    
+  }
+
+  &__title {
+    max-width: 67rem;
+    
+    @include bp($point_3) {
+    margin-bottom: 2rem;
+    }
+    
+  }
+
+  &__descr {
+    font-weight: 400;    
+    text-align: left;
+    color: #bdbdbd;
+
+    
+    @include bp($point_2, min) {
+      margin-left: auto;
+      max-width: 35rem;
+      font-size: 2.4rem;
+    line-height: 3.9rem;
+    }
+
+    
+    @include bp($point_3) {
+      margin: 0 auto 2rem;
+      width: 100%;
+      text-align: center;
+      font-size: 1.6rem;
+    line-height: 2.2rem;
+    }
+    
+  }
+
+  &__card_wrapper {
+   
+
+    
+    @include bp($point_4, min) {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      margin-right: -3rem;
+    }
+    
+    @include bp($point_5) {
+    display: block;
+    }
+    
+  }
+
+  &__card_w {
+    
+    
+        
+  
+  @include bp($point_4, min) {
+    display: flex;
+    flex: 1 1 33.33%;
+    padding-right: 3rem;
+  }
+  
+  @include bp($point_5) {
+  margin-bottom: 3rem;
+  }
+  
+  
+  }
+
+  &__card {
+    transition: all .3s ease-in-out;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 1rem 0.8rem #fff4f1;
+
+    
+    @include bp($point_2, min) {
+      width: 35rem;
+      padding: 6.3rem 6.5rem;
+    }
+
+    
+    @include bp($point_3) {
+      max-width: 35rem;
+      padding: 2rem 2rem;
+      margin: 0 auto;
+    }
+    
+    @media (hover:hover){
+      &:hover{
+        box-shadow: 0 0 5rem 0 #0000000A;
+        background-color: #fff4f1;
+    }
+
+    &:hover > .sec6__sprite_w{
+        opacity: 1;
+    }
+    }
+  
+    @media (hover: none){
+      &:active{
+        box-shadow: 0 0 5rem 0 #0000000A;
+        background-color: #fff4f1;
+    }
+
+    &:active > .sec6__sprite_w{
+        opacity: 1;
+    }
+    }
+
+    
+  }
+
+  &__icon_w {
+    margin: 0 auto;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 4.4rem;
+
+    &--orange {
+      background-color: #ffbd740d;
+    }
+
+    &--purple{
+        background-color: #E2598B0D;
+    }
+
+    &--blue{
+        background-color: #4D12EE0D;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    transform: translate(-50%, -50%);
+  }
+
+  &__card_title {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: #292830;
+
+    
+    @include bp($point_2, min) {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    
+    @include bp($point_3) {
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+    }
+    
+  }
+
+  &__card_descr {
+    font-weight: 400;
+    text-align: center;
+    color: #bdbdbd;
+    margin-bottom: 2.4rem;
+    flex-grow: 1;
+    
+    @include bp($point_2, min) {
+      font-size: 1.4rem;
+      line-height: 2.3rem;
+    }
+    
+    
+    @include bp($point_3) {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+.sec6__sprite_w{
+    margin: 0 auto;
+    width: 2.1rem;
+    height: 1.4rem;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    
+    & img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

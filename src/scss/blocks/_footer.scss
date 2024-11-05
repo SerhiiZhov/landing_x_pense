@@ -148,7 +148,7 @@
   }
 }
 
-.accordion__title.active + .accordion__content {
+.accordion__title.actives + .accordion__content {
   @include bp($point_7) {
     opacity: 1;
     visibility: visible;

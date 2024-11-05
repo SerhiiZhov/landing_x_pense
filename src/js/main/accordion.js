@@ -5,14 +5,14 @@ function accordion(accordionBlockSelector) {
 
   accordionTitleAll.forEach(item=> {
     item.addEventListener("click", function () {
-      if (item.classList.contains("active")) {
-        item.classList.remove("active");
+      if (item.classList.contains("actives")) {
+        item.classList.remove("actives");
         return;
       } else {
         accordionTitleAll.forEach(function (i) {
-          i.classList.remove("active");
+          i.classList.remove("actives");
         });
-        item.classList.add("active");
+        item.classList.add("actives");
       }
     });
   });

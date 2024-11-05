@@ -134,10 +134,18 @@
         </div>
         <p class="er">Please enter a valid phone number</p>
       </div>
-      <label class="popup__input"
-        ><input checked class="_req" name="checkbox" type="checkbox" />I agree
-        with policy
-      </label>
+      <fieldset class="popup__fieldset_policy">
+        <input
+          class="popup__checkbox _req"
+          checked
+          type="checkbox"
+          name="policy_popup"
+          id="policy_popup"
+        />
+        <label class="popup__lab_checkbox" for="policy_popup"
+          >I agree with policy</label
+        >
+      </fieldset>
       <button type="submit" class="btns">Buy plan</button>
     </form>
     <div class="popup__success ">

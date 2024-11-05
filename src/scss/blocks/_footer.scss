@@ -314,26 +314,31 @@
   }
 }
 
-.footer__fieldset_policy {
+.footer__fieldset_policy, .popup__fieldset_policy {
   display: flex;
   align-items: center;
 }
-.footer__checkbox {
+.footer__checkbox,.popup__checkbox {
   display: none;
 
-  &:checked + .footer__lab_checkbox::after {
+  &:checked + .footer__lab_checkbox::after,
+  &:checked + .popup__lab_checkbox::after {
     scale: 1;
   }
   &._error {
-    + .footer__lab_checkbox::before {
+    + .footer__lab_checkbox::before,
+    .popup__lab_checkbox::before {
       box-shadow: 0 0 1.5rem red;
       border-radius: 0.8rem;
     }
   }
 }
 
-.footer__lab_checkbox {
-  color: black;
+
+
+.footer__lab_checkbox,
+.popup__lab_checkbox {
+  
   font-weight: 400;
   display: inline-flex;
   position: relative;
@@ -352,9 +357,7 @@
   &::before {
     content: "";
     align-self: center;
-
     border: 0.1rem solid black;
-
     margin-right: 0.5rem;
 
     @include bp($point_2, min) {
@@ -394,6 +397,20 @@
       height: 0.87rem;
       border-radius: 0.2rem;
     }
+  }
+}
+
+.footer__lab_checkbox{
+  color: black;
+  &::before {
+    border: 0.1rem solid black;
+  }
+}
+
+.popup__lab_checkbox{
+  color: white;
+  &::before {
+    border: 0.1rem solid white;
   }
 }
 
@@ -730,9 +747,6 @@
   border-radius: 1rem;
   padding: 1.5rem;
   width: 100%;
-
-  
-  
 }
 
 .input-box .input-field input::placeholder{
